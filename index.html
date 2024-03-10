@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+    <script src="js/mqttws31.js"></script>
+    <title>Dashboard | SFITB</title>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="panel-sidebar">
+            <div class="sidebar">
+                <div class="logo-header">
+                    <img src="img/logosf.png" height="100" alt="">
+                </div>
+                <div class="list-menu">
+                    <ul class="menu">
+                        <li>
+                            <a href="#" class="active">
+                                <i class='bx bxs-dashboard bx-flashing'></i>Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bxs-bar-chart-alt-2'></i>Monitor
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- header -->
+            <div class="myheader">
+                <div class="logo">
+                    <img src="img/logo-sf.png" height="40" alt="">
+                    <h3><i class='bx bxs-doughnut-chart'></i>Home/Dashboard</h3>
+                </div>
+                <div class="logo-itb">
+                    <img src="img/logo_itb_1024.png" height="40" alt="">
+                </div>
+            </div>
+            <!-- mypanel -->
+            <div id="mypanel">
+                <!-- myapp -->
+                <div class="myapp">
+                    <div class="sensor">
+                        <div class="data-sensor">
+                            <h2>Pump Control</h2>
+                        </div>
+                        <div id="mypump"></div>
+                        <div class="data-sensor">
+                            <div></div>
+                            <div class="data-setup all">
+                                <input type="number" id="pump_all" class="col-data" value="0">
+                                <button id="set_pump_all" type="button" class="btn-upload"
+                                    onclick="btnSetup('pump_all', 'SFITB/IOT/PUMP_ALL', 'set_pump_all')">
+                                    <i class='bx bxs-chevron-right'></i> Set All</button>
+                                <button id="start_pump_all" type="button" class="btn-start" onclick="btnStartAll()"><i
+                                        class='bx bxs-zap'></i> Start All</button>
+                                <button id="stop_pump_all" type="button" class="btn-stop" onclick="btnStopAll()"><i
+                                        class="bx bx-stop-circle"></i> Stop All</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- myapp -->
+                <div class="myapp">
+                    <div class="sensor">
+                        <div class="data-sensor">
+                            <h2>Pump Interface Monitor</h2>
+                        </div>
+                        <div id="pump_interface">
+                            <!-- <div class="grid-container">
+                                <div id="lf1" class="item">
+                                    <img src="img/frame_1.png" height="140" alt="">
+                                    <label for="pump_lf1">Pump 1</label>
+                                    <input type="number" id="pump_lf1" class="col-data" readonly>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer>
+                Developed by <span>Lab IoT</span>
+            </footer>
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="js/app.js"></script>
+    <script src="js/pump.js"></script>
+</body>
+
+</html>
